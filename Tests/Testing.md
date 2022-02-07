@@ -1,0 +1,6 @@
+[[Test Driven Development (TDD)]]
+[[Behavior Driven Development (BDD)]]
+[[Exploratory testing]]
+[[Ice cream cone]]
+[[test fixtures]]
+[[Flaky test]]
