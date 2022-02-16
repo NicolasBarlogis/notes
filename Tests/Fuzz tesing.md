@@ -1,0 +1,2 @@
+Lancer des tests existants (TU, TI, ...) avec des générateurs de données aléatoire en entrée. Permet de valider les cas aux limites / très étranges.
+https://www.ionos.fr/digitalguide/sites-internet/developpement-web/quest-ce-que-le-fuzzing/

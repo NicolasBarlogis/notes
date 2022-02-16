@@ -6,3 +6,5 @@
 ### [[Streaming Architecture]]
 ### [[Model View Presenter (MVP)]]
 ### [[Use-Case Driven Approach (BCE)]]
+
+[Repo d'exemple d'implémentation, avec C# .Net et Angular](https://github.com/jasontaylordev/CleanArchitecture)

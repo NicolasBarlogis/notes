@@ -4,3 +4,4 @@
 [[Ice cream cone]]
 [[test fixtures]]
 [[Flaky test]]
+[[Fuzz tesing]]

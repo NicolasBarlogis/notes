@@ -1,0 +1,1 @@
+![[Assessing Adjusting Assembling.png]]

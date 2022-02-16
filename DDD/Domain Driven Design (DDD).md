@@ -4,5 +4,8 @@
 ## [[Strategic Design]]
 ## [[Tactical Design]]
 
+# Modélisation
+[[Event storming]]
+
 # Mise en place
 [[Bubble context]]
