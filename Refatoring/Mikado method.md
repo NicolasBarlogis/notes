@@ -11,3 +11,5 @@ Mikado Method est applicable pour formaliser et structurer toute modification ou
 -   Et de façon générale toute modification ou évolution importante qui nécessite une organisation rigoureuse.
 
 https://blog.engineering.publicissapient.fr/2020/03/20/domptez-vos-refactoring-avec-la-mikado-method/
+
+#Refactoring

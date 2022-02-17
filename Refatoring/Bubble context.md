@@ -4,3 +4,5 @@ On utilise un anticorruption layer, qui fait la traduction du modèle legacy ver
 [GETTING STARTED WITH DDD WHEN SURROUNDED BY LEGACY SYSTEMS (Eric Evans)](https://www.domainlanguage.com/wp-content/uploads/2016/04/GettingStartedWithDDDWhenSurroundedByLegacySystemsV1.pdf)
 
 ![[ACL.png]]
+
+#Refactoring

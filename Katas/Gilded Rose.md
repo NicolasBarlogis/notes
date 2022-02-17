@@ -28,6 +28,7 @@ Fixer le TU:
 Le test reste pas fou, on a besoin de plus.
 
 ### 2- Approval test global
+Mise en place d'[[Approval Testing]]
 https://approvaltests.com/
 **Attention**, approvaltest.net n'est plus maintenu. Bien utiliser [Verify](https://github.com/VerifyTests/Verify/).
 
@@ -103,3 +104,4 @@ Pas d'équivalent au `CombinationApprovals.VerifyAllCombinations` de ApprovalTes
 ### Bonus 4 - Ajouter la gestion des objets invoqués
 
 ## Tags
+#moyen

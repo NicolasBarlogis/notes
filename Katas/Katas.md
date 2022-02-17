@@ -1,9 +1,13 @@
 # Données
 niveau simple, moyen, avancé (à mettre dans les tags)
 
-# Liste
-[[Stack]]
+# Liste Kata Résolus
 [[Gilded Rose]]
+
+# Liste Kata à préparer
+[[Billing Refactoring]]
+[[Stack]]
+[[Trip Service]]
 
 # Template
 ## Objectifs

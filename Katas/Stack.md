@@ -14,4 +14,4 @@ Exemple: comment évaluer que le push s'est bien passé ? Pas s'enflammer, on le
 ## Déroulement du kata
 +
 ## Tags
-#simple #kata #scala 
+#simple
