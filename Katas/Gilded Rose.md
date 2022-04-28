@@ -27,7 +27,7 @@ Fixer le TU:
 * Nommer correctement le TU
 Le test reste pas fou, on a besoin de plus.
 
-### 2- Approval test global
+### 2- Approval test global (C#)
 Mise en place d'[[Approval Testing]]
 https://approvaltests.com/
 **Attention**, approvaltest.net n'est plus maintenu. Bien utiliser [Verify](https://github.com/VerifyTests/Verify/).
@@ -61,15 +61,83 @@ Besoin d'ajouter au csproj la ligne implicitUsings (dans la section PropertyGrou
 	<ImplicitUsings>enable</ImplicitUsings>
 </PropertyGroup>
 ```
-
+Ou mettre ce using:
+```c#
+using static VerifyXunit.Verifier;
+```
 * Copier/coller le contenu du received vers le approved
+
+Empêcher le scrubbing (retirer données par défaut):
+https://github.com/VerifyTests/Verify/blob/main/docs/serializer-settings.md
+```c#
+[UsesVerify]
+public class InventoryTest {
+	public InventoryTest()     {
+	    VerifierSettings.ModifySerialization(settings =>
+	        settings.AddExtraSettings(serializerSettings =>
+	            serializerSettings.DefaultValueHandling = DefaultValueHandling.Include));
+	}              
+	                                            
+    [Fact]
+    public Task item_should_have_valid_values_at_init() {
+         var item = new Item { Name = "foo", SellIn = 0, Quality = 0 };
+         return Verify(item);
+	 }
+ }
+```
+
+### 2- Approval test global (JS)
+Mise en place d'[[Approval Testing]], via les [snapshots](https://jestjs.io/docs/snapshot-testing) Jest.
+
+* Créer une classe pour l'approval (ou mettre dans la classe test existante, pas nécessaire de séparer)
+* Créer le test:
+```javascript
+const App = require("../src/app")
+
+describe("Gilded Rose snap", function() {
+  it("should be the same output", function() {
+    // capture console.log
+    console.stdlog = console.log.bind(console);
+    console.logs = [];
+    console.log = function(){
+      console.logs.push(Array.from(arguments));
+	  // console.stdlog.apply(console, arguments);
+    }
+
+    let app = new App();
+    app.run();
+
+    expect(console.logs.join('\r\n')).toMatchSnapshot();
+  });
+});
+```
+Au premier run du test, un dossier `__snapshots__` est généré avec un premier fichier. Les tests suivants seront fait en comparant à ce fichier.
+
+On peut manipuler/mettre à jour facilement le snapshot lors d'un changement, lorsque les tests sont lancés en mode `watch` :
+```bash
+› 1 snapshot failed.                                                                                         
+Snapshot Summary                                                                                              
+ › 1 snapshot failed from 1 test suite. Inspect your code changes or press `u` to update them.  
+
+ Watch Usage                                                                                                   
+ › Press f to run only failed tests.                                                                          
+ › Press o to only run tests related to changed files.                                                        
+ › Press p to filter by a filename regex pattern.                                                             
+ › Press t to filter by a test name regex pattern.                                                            
+ › Press u to update failing snapshots.                                                                       
+ › Press i to update failing snapshots interactively.                                                         
+ › Press q to quit watch mode.                                                                                
+ › Press Enter to trigger a test run.           
+```
+via `-u` pour accepter automatiquement la nouvelle version, `-i` pour voir les options.
 
 ### ~~3 - Transformer le TU en approval test~~
 * Transformer le TU en approval équivalent (via le nom)
 * Améliorer le TU pour vérifier l'objet en entier (via toString)
 
 ### 4 - Vérifier le coverage des tests
-Via Stryker, ou VS Enterprise, ou [FineCodeCoverage](https://github.com/FortuneN/FineCodeCoverage)
+Via Rider, ou VS Enterprise, ou [FineCodeCoverage](https://github.com/FortuneN/FineCodeCoverage) ou tout autre outil (C#).
+Via Jest coverage `npm run test:coverage` puis visualisation dans un outil --> non testé (JS)
 
 ![[vs-features.png]]
 
@@ -89,9 +157,19 @@ Quand on a plus de rouge, on a isolé un des noms. On répéte l'opération dans
 ### 6 - Refactorer le if
 * Remonter les if/else imbriqués
 * Convertir en switch
+
+### 7 - Extraire la logique
+* Extraire & factoriser les concepts métier (quality > 50...)
+* Créer des tu pour les règles métier (en plus du test de non regression)
+
+### 8 - Respecter l'open/close
 * Extract method pour isoler le switch
 * Move method pour repousser le switch dans item
-* Replace Conditional with Polymorphism, un cas par un cas, en fixant les tests à chaque étape (UpdateQuality avec `virtual`/`override`) --> fix le smell Switch Statement, qui est également une violation de l'open/close principle
+* Replace Conditional with Polymorphism, un cas par un cas, en fixant les tests à chaque étape (UpdateQuality, avec `virtual`/`override` pour C#) --> fix le smell Switch Statement, qui est également une violation de l'open/close principle
+
+9 - Mettre en place des tests fonctionnels
+
+10 - Ajouter la nouvelle fonctionnalité
 
 ### Bonus 1 - Middle Man
 En finissant le 6, quel reste l'intêret de la class GlidedRose ?

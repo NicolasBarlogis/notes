@@ -1,0 +1,1 @@
+https://vaadin.com/learn/tutorials/ddd/tactical_domain_driven_design

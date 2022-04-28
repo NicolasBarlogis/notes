@@ -1,0 +1,1 @@
+Type de test "de surface" (sous-ensemble des tests d'acceptation), pour vérifier rapidement que les fonctionnalités critiques de l'appli sont là. Celà permet de rejeter rapidement et à moindre coût un build douteux, sans avoir à lancer l'ensemble des tests end2end / d'acceptation.

@@ -5,3 +5,4 @@
 [[test fixtures]]
 [[Flaky test]]
 [[Fuzz tesing]]
+[[Smoke Testing]]

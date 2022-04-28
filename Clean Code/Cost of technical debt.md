@@ -1,0 +1,1 @@
+white paper: https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf

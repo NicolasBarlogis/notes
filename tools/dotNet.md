@@ -55,3 +55,16 @@ var temp2 = temp1 with { HighTemp = 65 };
 Outil simple permettant de benchmarker directement des méthodes/fonctions
 
 [[Archunit]]
+
+[[Sharplab]] https://sharplab.io/
+Analyse un snippet de code C# et montre le code généré en réponse
+
+[[Specflow]] https://specflow.org/
+Automatisation test 'BDD'  / validation via du Gherkin.
+--> https://docs.specflow.org/projects/specflow-livingdoc/en/latest/ livingdoc générée pour faciliter partage autour du Gherkin
+
+[[FsCheck]]https://fscheck.github.io/FsCheck/
+Lib de [[Fuzz tesing]] / [[Property Based Testing]]
+
+OneOf https://github.com/mcintyre321/OneOf
+Explicite le type de retour d'une méthode + les exceptions qu'elle peut lancer
