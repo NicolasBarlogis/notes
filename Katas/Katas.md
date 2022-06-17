@@ -10,6 +10,9 @@ niveau simple, moyen, avancé (à mettre dans les tags)
 [[Trip Service]]
 [[Election]]
 
+# Sources de kata
+http://fundamentalsofsoftwarearchitecture.com/katas/list.html --> kata d'architecture
+
 # Template
 ## Objectifs
 
