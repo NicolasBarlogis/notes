@@ -7,3 +7,4 @@
 ## [[Service]]
 
 [[Domain Oriented Observability]] 
+[[Always valid domain model]]
