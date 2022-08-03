@@ -395,3 +395,76 @@ Splitting up a method only makes sense if it results in cleaner abstractions, ov
 The best way of splitting by factoring out a subtask into a separate method
 Typically this means that the child method is relatively general-purpose: it could conceivably be used by other methods besides the parent
 
+The second way to break up a method is to split it into two separate methods, each visible to callers of the original method
+if the original method had an overly complex interface because it tried to do multiple things that were not closely related
+Ideally, most callers should only need to invoke one of the two new methods
+
+> [!danger] Red Flag: Conjoined Method
+> It should be possible to understand each method independently. If you can’t understand the implementation of one method without also understanding the implementation of another, that’s a red flag. This red flag can occur in other contexts as well: if two pieces of code are physically separated, but each can only be understood by looking at the other, that is a red flag.
+
+---
+
+## Chapter 10
+#### Define Errors Out Of Existence
+Exception handling is one of the worst sources of complexity in software systems. Code that deals with special conditions is inherently harder to write than code that deals with normal case
+
+#### 10.1 Why exceptions add complexity
+I use the term exception to refer to any uncommon condition that alters the normal flow of control in a program, exceptions can occur even without using a formal exception reporting mechanism, such as when a method returns a special value indicating that it didn’t complete its normal behavior.
+
+When an exception occurs
+	* move forward and complete the work in progress
+	* abort the operation in progress and report the exception upwards 
+
+exception handling code creates opportunities for more exceptions. Secondary exceptions occurring during recovery are often more subtle and complex than the primary exceptions
+
+big try/catch: not obvious where each exception is generated
+break up the code into many distinct try blocks
+make it clear where exceptions occur, but break up the flow of the code and make it harder to read
+A [recent study](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-yuan.pdf) found that more than 90% of catastrophic failures in distributed data-intensive systems were caused by incorrect error handling
+
+It’s difficult to ensure that exception handling code really works. Some exceptions, such as I/O errors, can’t easily be generated in a test environment, so it’s hard to test the code that handles them, “code that hasn’t been executed doesn’t work”
+
+#### 10.2 Too many exceptions
+“the more errors detected, the better.” This leads to an over-defensive style.
+It’s tempting to use exceptions to avoid dealing with difficult situations: rather than figuring out a clean way to handle it, just throw an exception and punt the problem to the caller
+Generating an exception in a situation like this just passes the problem to someone else and adds to the system’s complexity.
+
+**classes with lots of exceptions have complex interfaces, and they are shallower than classes with fewer exceptions**
+
+best way to reduce the complexity damage caused by exception handling is to reduce the number of places where exceptions have to be handled
+
+#### 10.3 Define errors out of existence
+define your APIs so that there are no exceptions to handle: define errors out of existence
+Ex: unset on non existant variable --> nothing
+rather than deleting a variable, unset should ensure that a variable no longer exists
+
+#### 10.4 Example: file deletion in Windows
+Windows operating system does not permit a file to be deleted if it is open in a process
+In Unix, if a file is open when it is deleted, Unix does not delete the file immediately. Instead, it marks the file for deletion, then the delete operation returns successfully. The file name has been removed from its directory, so no other processes can open the old file and a new file with the same name can be created, but the existing file data persists. Processes that already have the file open can continue to read it and write it normally. Once the file has been closed by all of the accessing processes, its data is freed
+
+#### 10.5 Example: Java substring method
+The error-ful approach may catch some bugs, but it also increases complexity, which results in other bugs
+**Overall, the best way to reduce bugs is to make software simpler**
+
+#### 10.6 Mask exceptions
+e second technique for reducing the number of places where exceptions must be handled is exception masking
+an exceptional condition is detected and handled at a low level in the system, so that higher levels of software need not be aware of the condition.
+
+Exception masking doesn’t work in all situations, but it is a powerful tool in the situations where it works. It results in deeper classes, since it reduces the class’s interface (fewer exceptions for users to be aware of) and adds functionality in the form of the code that masks the exception. Exception masking is an example of pulling complexity downward.
+
+####10.7 Exception aggregation
+third technique for reducing complexity related to exceptions is exception aggregation
+handle many exceptions with a single piece of code; rather than writing distinct handlers for many individual exceptions, handle them all in one place with a single handler.
+
+Exception aggregation works best if an exception propagates several levels up the stack before it is handled; this allows more exceptions from more methods to be handled in the same place. This is the opposite of exception masking
+
+One way of thinking about exception aggregation is that it replaces several special-purpose mechanisms, each tailored for a particular situation, with a single general-purpose mechanism that can handle multiple situations. This provides another illustration of the benefits of general-purpose mechanisms
+
+#### 10.8 Just crash?
+The fourth technique for reducing complexity related to exception handling is to crash the application. 
+there will be certain errors that it’s not worth trying to handle
+one example is “out of memory” errors that occur during storage allocation. an I/O error occurs while reading or writing an open file (such as a disk hard error), or if a network socket cannot be opened,
+
+Whether or not it is acceptable to crash on a particular error depends on the application
+
+#### 10.9 Design special cases out of existence
