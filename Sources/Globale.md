@@ -1,5 +1,6 @@
 # Blogs / sites
 * [Blog de Sandro Mancuso, beaucoup de bonnes idées sur le refacto de legacy](https://understandlegacycode.com/)
+* [Sapiens Works, de très bons articles sur l'agile / le DDD](https://blog.sapiensworks.com/)
 
 
 # Constraints / concepts lists

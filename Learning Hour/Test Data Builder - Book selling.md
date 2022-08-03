@@ -108,3 +108,6 @@ var belgium = franceBuilder.But().Named("Belgique").Build();
 
 ## Conclusion - 5'
 Expliquez les Test Data Builder en une phrase
+
+## Canvas
+![[TestDataBuilder-Canvas.png]]
