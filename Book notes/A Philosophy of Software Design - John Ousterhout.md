@@ -468,3 +468,184 @@ one example is “out of memory” errors that occur during storage allocation. 
 Whether or not it is acceptable to crash on a particular error depends on the application
 
 #### 10.9 Design special cases out of existence
+Special cases can result in code that is riddled with if statements. special cases should be eliminated
+The best way to do this is by designing the normal case in a way that automatically handles the special cases without any extra code
+
+ex: The notion of “no selection” makes sense in terms of how the user thinks about the application’s interface, but that doesn’t mean it has to be represented explicitly inside the application. Having a selection that always exists, but is sometimes empty and thus invisible, results in a simpler implementation.
+
+#### 10.10 Taking it too far
+Defining away exceptions, or masking them inside a module, only makes sense if the exception information isn’t needed outside the module
+you must determine what is important and what is not important. Things that are not important should be hidden
+
+---
+
+## Chapter 11
+#### Design it Twice
+You’ll end up with a much better result if you consider multiple options for each major design decision: design it twice
+
+Try to pick approaches that are radically different from each other; you’ll learn more that way
+you are certain that there is only one reasonable approach, consider a second design anyway
+list the pros and cons of each one.
+	* Does one alternative have a simpler interface ?
+	* Is one interface more general-purpose ?
+	* Does one interface enable a more efficient implementation ?
+
+Sometimes none of the alternatives is particularly attractive; when this happens, see if you can come up with additional schemes
+
+The design-it-twice principle can be applied at many levels in a system
+
+Designing it twice does not need to take a lot of extra time.
+of time compared to the days or weeks you will spend implementing the class. The initial design experiments will probably result in a significantly better design, which will more than pay for the time spent designing it twice
+
+ have noticed that the design-it-twice principle is sometimes hard for really smart people to embrace. When they are growing up, smart people discover that their first quick idea about any problem is sufficient for a good grade; there is no need to consider a second or third possibility. This makes it easy to develop bad work habits.
+ Eventually, everyone reaches a point where your first ideas are no longer good enough
+also improves your design skills
+
+---
+
+## Chapter 12
+#### Why Write Comments? The Four Excuses
+the process of writing comments, if done correctly, will actually improve a system’s design
+
+#### 12.1 Good code is self-documenting
+This is a delicious myth, like a rumor that ice cream is good for your health: we’d really like to believe it!
+If users must read the code of a method in order to use it, then there is no abstraction/
+Without comments, the only abstraction of a method is its declaration. Not enough for complexe function
+
+#### 12.2 I don’t have time to write comments
+if you allow documentation to be deprioritized, you’ll end up with no documentation.
+investment mindset --> strategical development
+Good comments make a huge difference in the maintainability
+writing comments needn’t take a lot of time
+
+#### 12.3 Comments get out of date and become misleading
+Large changes to the documentation are only required if there have been large changes to the code, and the code changes will take more time than the documentation changes
+keep the documentation close to the corresponding code
+Code reviews provide a great mechanism for detecting and fixing stale comments
+
+#### 2.4 All the comments I have seen are worthless
+most existing documentation is so-so at best
+writing solid documentation is not hard, once you know how
+
+#### 12.5 Benefits of well-written comments
+**The overall idea behind comments is to capture information that was in the mind of the designer but couldn’t be represented in the code**
+When other developers come along later to make modifications, the comments will allow them to work more quickly and accurately.
+
+Documentation can reduce cognitive load by providing developers with the information they need to make changes and by making it easy for developers to ignore information that is irrelevant.
+Good documentation can clarify dependencies, and it fills in gaps to eliminate obscurity.
+
+---
+
+## Chapter 13
+#### Comments Should Describe Things that Aren’t Obvious from the Code
+programming language can’t capture all of the important information that was in the mind of the developer when the code was written.
+**Developers should be able to understand the abstraction provided by a module without reading any code other than its externally visible declarations.**
+
+#### 13.1 Pick conventions
+ensure consistency, makes comments easier to read and understand.
+ensure that you actually write comments
+
+Most comments fall into one of the following categories:
+	* **Interface**: immediately precedes the declaration of a module such as a class, data structure, function, or method. describe’s the module’s interface
+	* **Data structure member**: comment next to the declaration of a field
+	* **Implementation comment**: comment inside the code of a method
+	* **Cross-module comment**: a comment describing dependencies that cross module boundaries.
+most important comments are those in the first two categories
+
+Every class should have an interface comment, every class variable should have a comment, and every method should have an interface comment
+
+##### 13.2 Don’t repeat the code
+> [!danger] Red Flag: Comment Repeats Code
+> If the information in a comment is already obvious from the code next to the comment, then the comment isn’t helpful. One example of this is when the comment uses the same words that make up the name of the thing it is describing.
+
+**use different words in the comment from those in the name of the entity being described**
+
+#### 13.3 Lower-level comments add precision
+**Comments augment the code by providing information at a different level of detail**
+Comments at the same level as the code are likely to repeat the code
+
+Comments can fill in missing details: 
+* What are the units for this variable?
+* Are the boundary conditions inclusive or exclusive? 
+* If a null value is permitted, what does it imply? 
+* If a variable refers to a resource that must eventually be freed or closed, who is  responsible for freeing or closing it? 
+* Are there certain properties that are always true for the variable (invariants), such as “this list always contains at least one entry”?
+Some of this information could potentially be figured out by examining all of the code where the variable is used. However, this is time-consuming and errorprone
+
+#### 13.4 Higher-level comments enhance intuition
+describes the code’s overall function at a higher level
+Higher-level comments are more difficult to write than lower-level comments because you must think about the code in a different way : 
+	* What is this code trying to do? 
+	* What is the simplest thing you can say that explains everything in the code? 
+	* What is the most important thing about this code?
+
+#### 13.5 Interface documentation
+**If you want code that presents good abstractions, you must document those abstractions with comments**
+The first step in documenting abstractions is to separate interface comments from implementation comments
+
+**If interface comments must also describe the implementation, then the class or method is shallow** :
+* The comment usually starts with a sentence or two describing the behavior of the method as perceived by callers
+* The comment must describe each argument and the return value (if any). These comments must be very precise, and must describe any constraints on argument values as well as dependencies between arguments. 
+* If the method has any side effects, these must be documented in the interface comment.
+* A method’s interface comment must describe any exceptions that can emanate from the method. 
+* If there are any preconditions that must be satisfied before a method is invoked, these must be described
+
+> [!danger] Red Flag: Implementation Documentation Contaminates Interface
+> This red flag occurs when interface documentation, such as that for a method, describes implementation details that aren’t needed in order to use the thing being documented.
+
+#### 13.6 Implementation comments: what and why, not how
+**The main goal of implementation comments is to help readers understand what the code is doing**
+
+For short methods, the code only does one thing, which is already described in its interface comment, so no implementation comments are needed
+
+Longer methods have several blocks of code. Add a comment before each of the major blocks to provide a high-level (more abstract) description of what that block does
+
+Explain, what the code is doing, also useful to explain why
+
+#### 13.7 Cross-module design decisions
+In a perfect world, every important design decision would be encapsulated within a single class
+But not always possible -->  provider / consummer, sender / receiver
+The biggest challenge with cross-module documentation is finding a place to put it where it will naturally be discovered by developers 
+Unfortunately, in many cases there is not an obvious central place to put cross-module documentation.
+
+ have recently been experimenting with an approach where cross-module issues are documented in a central file called designNotes. The file is divided up into clearly labeled sections, one for each major topic
+ Then, in any piece of code that relates to one of these issues there is a short comment referring to the designNotes file
+ However, this has the disadvantage that the documentation is not near any of the pieces of code that depend on it, so it may be difficult to keep up-to-date as the system evolves.
+
+---
+
+## Chapter 14
+#### Choosing Names
+Good names are a form of documentation: they make code easier to understand
+
+#### 14.1 Example: bad names cause bugs
+The file system code used the variable name "block" for two different purposes
+Unfortunately, most developers don’t spend much time thinking about names. They tend to use the first name that comes to mind
+
+#### 14.2 Create an image
+When choosing a name, the goal is to create an image in the mind of the reader about the nature of the thing being named
+Names are a form of abstraction
+
+#### 14.3 Names should be precise
+Good names have two properties: precision and consistency
+> [!danger] Red Flag: Vague Name
+> If a variable or method name is broad enough to refer to many different things, then it doesn’t convey much information to the developer and the underlying entity is more likely to be misused.
+
+> [!danger] Red Flag: Hard to Pick Name
+> If it’s hard to find a simple name for a variable or method that creates a clear image of the underlying object, that’s a hint that the underlying object may not have a clean design
+
+#### 14.4 Use names consistently
+In any program there are certain variables that are used over and over again. use the same name everywhere.
+
+Consistency has three requirements
+	* always use the common name for the given purpose
+	* never use the common name for anything other than the given purpose
+	* make sure that the purpose is narrow enough that all variables with the name have the same behavio
+ex: i & j for loops. i always extern, j intern
+
+#### 14.5 A different opinion: Go style guide
+name choice for Go, [Andrew Gerrand](https://go.dev/talks/2014/names.slide#1) states that “long names obscure what the code does.”
+
+
+
+
