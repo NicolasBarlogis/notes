@@ -21,10 +21,11 @@
     
 -   Accelerate: The Science Behind Devops: Building and Scaling High Performing Technology Organizations (source: Julien Vitte, coach craft)
     
--   # Domain Modeling Made Functional: Tackle Software Complexity With Domain-Driven Design and F# (source yoan courtel) + https://fsharpforfunandprofit.com
+-   Domain Modeling Made Functional: Tackle Software Complexity With Domain-Driven Design and F# (source yoan courtel) + https://fsharpforfunandprofit.com
     
--     
-    
+-   The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change  
+- 
+https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X
 
   
 
