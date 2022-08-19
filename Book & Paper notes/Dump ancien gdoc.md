@@ -27,23 +27,26 @@
 - 
 https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X
 
+* Break All the Rules (source: The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change)
+
   
 
 # Liste revue
 
-Must read
+#### Must read
 
   
 
-Should read
+#### Should read
 
   
 
-Could read
+#### Could read
 
   
 
-Won’t read
+#### Won’t read
+* Soft Skills The Software Developer's Life Manual (contenu pas toujours pertinent, auteur 'étrange')
 
   
 
