@@ -4,7 +4,12 @@
 ## [[Strategic Design]]
 ## [[Tactical Design]]
 [[Functioning Core, Reactive Shell]]
-[[Supple design]]
+[[Clean Code/Supple design]]
+
+[Domain-Driven Design Reference](https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
+--> Résumé du DDD fait par Eric Evans en 2015
+
+[About Team Topologies and Context Mapping](https://blog.avanscoperta.it/2021/04/22/about-team-topologies-and-context-mapping/) Comparaisson entre les concepts DDD de context mapping et ceux de team topologies
 
 # Modélisation
 [[Event storming]]

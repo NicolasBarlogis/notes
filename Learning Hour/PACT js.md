@@ -1,3 +1,5 @@
+https://pactflow.io/how-pact-works/#slide-1
+
 ### prérequis
 Installer docker 
 https://stackoverflow.com/a/59882818
@@ -8,6 +10,16 @@ Si problèmes lors du npm install:
 [1] npm ERR! gyp ERR! find VS VCINSTALLDIR not set, not running in VS Command Prompt
 ```
 Voir https://stackoverflow.com/a/59882818
+
+
+--> installer Visual Studio Installer, choisir un visual studio récent et lui ajouter l'outil de build C++
+```sh
+npm install -g --msvs_version=20XX node-gyp rebuild
+```
+
+node-gyp rebuild error: 
+gyp: binding.gyp not found
+https://stackoverflow.com/questions/42638918/cannot-npm-install-due-to-node-gyp-binding-gyp-not-found
 
 --- 
 Suite pas nécessaire à refaire
