@@ -1,0 +1,1 @@
+http://jlhood.com/there-is-no-u-in-crud/

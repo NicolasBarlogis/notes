@@ -1,3 +1,4 @@
+[[L’objet fonctionnel.pptx]]
 ### Idées de titre 
 * Quand l'objet devient fonctionnel, le meilleur de deux mondes
 * Utiliser la programmation fonctionnelle en production ? Les langages objet s'adaptent
