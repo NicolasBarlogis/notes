@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupCake", "CupCake\CupCake.csproj", "{12DA0C49-6DEC-4CAD-A5B6-AF754D42BA5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupCake.Tests", "CupCake.Tests\CupCake.Tests.csproj", "{9C5D1C7B-A321-4273-B823-7F9CB14E34FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12DA0C49-6DEC-4CAD-A5B6-AF754D42BA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DA0C49-6DEC-4CAD-A5B6-AF754D42BA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DA0C49-6DEC-4CAD-A5B6-AF754D42BA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DA0C49-6DEC-4CAD-A5B6-AF754D42BA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5D1C7B-A321-4273-B823-7F9CB14E34FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5D1C7B-A321-4273-B823-7F9CB14E34FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5D1C7B-A321-4273-B823-7F9CB14E34FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5D1C7B-A321-4273-B823-7F9CB14E34FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

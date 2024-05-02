@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseDontValidate", "ParseDontValidate\ParseDontValidate.csproj", "{55F45536-35F1-4F5D-9583-93A9BEDC2C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseDontValidate.Tests", "ParseDontValidate.Tests\ParseDontValidate.Tests.csproj", "{1DF3EAE8-A393-4204-BECC-645B63753280}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F45536-35F1-4F5D-9583-93A9BEDC2C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F45536-35F1-4F5D-9583-93A9BEDC2C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F45536-35F1-4F5D-9583-93A9BEDC2C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F45536-35F1-4F5D-9583-93A9BEDC2C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF3EAE8-A393-4204-BECC-645B63753280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF3EAE8-A393-4204-BECC-645B63753280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF3EAE8-A393-4204-BECC-645B63753280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF3EAE8-A393-4204-BECC-645B63753280}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

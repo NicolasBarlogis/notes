@@ -5,6 +5,7 @@
 ## [[Tactical Design]]
 [[Functioning Core, Reactive Shell]]
 [[Supple design]]
+[[Event Sourcing]]
 
 # Modélisation
 [[Event storming]]

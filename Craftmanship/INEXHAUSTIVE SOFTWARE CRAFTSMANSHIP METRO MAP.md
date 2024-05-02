@@ -1,3 +1,0 @@
-[https://github.com/Moustov/sw-craftsmanship-map/blob/main/Inexhaustive%20Software%20Craftsman%20-%20Christophe%20Moustier.pdf](https://github.com/Moustov/sw-craftsmanship-map/blob/main/Inexhaustive%20Software%20Craftsman%20-%20Christophe%20Moustier.pdf "https://github.com/moustov/sw-craftsmanship-map/blob/main/inexhaustive%20software%20craftsman%20-%20christophe%20moustier.pdf")
-
-![[Inexhaustive Software Craftsman - Christophe Moustier.pdf]]

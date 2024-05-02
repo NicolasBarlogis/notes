@@ -1,3 +1,8 @@
+Patterns d'ADR
+[https://github.com/joelparkerhenderson/architecture-decision-record/tree/main/templates/decision-record-template-for-alexandrian-pattern](https://github.com/joelparkerhenderson/architecture-decision-record/tree/main/templates/decision-record-template-for-alexandrian-pattern)
+
+---
+
 https://blog.engineering.publicissapient.fr/2019/03/05/architecture-et-documentation-les-adrs/
 
 Une **décision d’architecture** peut être définie comme la réponse à une exigence fonctionnelle ou non-fonctionnelle qui affecte la qualité du système. 

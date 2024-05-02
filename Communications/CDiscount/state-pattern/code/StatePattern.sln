@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisGame", "TennisGame\TennisGame.csproj", "{5E3CE7BC-82CE-4F0F-9029-A94589717A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisGame.Tests", "TennisGame.Tests\TennisGame.Tests.csproj", "{69040760-13E9-415C-8FB5-042AEC8E121D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E3CE7BC-82CE-4F0F-9029-A94589717A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3CE7BC-82CE-4F0F-9029-A94589717A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3CE7BC-82CE-4F0F-9029-A94589717A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3CE7BC-82CE-4F0F-9029-A94589717A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69040760-13E9-415C-8FB5-042AEC8E121D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69040760-13E9-415C-8FB5-042AEC8E121D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69040760-13E9-415C-8FB5-042AEC8E121D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69040760-13E9-415C-8FB5-042AEC8E121D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
