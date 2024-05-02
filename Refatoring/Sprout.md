@@ -1,0 +1,1 @@
+https://agilewarrior.wordpress.com/2010/11/19/refactoring-legacy-code-sprout-method/

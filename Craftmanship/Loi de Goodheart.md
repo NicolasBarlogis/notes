@@ -1,1 +1,3 @@
 Lorsqu'une mesure devient un objectif, elle cesse d'être une bonne mesure
+
+La **loi de Goodhart**, du nom de l'économiste [Charles Goodhart](https://fr.wikipedia.org/wiki/Charles_Goodhart "Charles Goodhart") qui l'a formulée pour la première fois en 1975, indique que « lorsqu'une mesure devient un objectif, elle cesse d'être une bonne mesure »[1](https://fr.wikipedia.org/wiki/Loi_de_Goodhart#cite_note-1), car elle devient sujette à des manipulations, directes (trucage des chiffres) ou indirectes (travailler uniquement à améliorer cette mesure)

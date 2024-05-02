@@ -33,3 +33,4 @@ S’occupent des algorithmes et de la répartition des responsabilités entre le
 
 ## Autres patterns
 [[Unit of work]]
+[[Saga]]

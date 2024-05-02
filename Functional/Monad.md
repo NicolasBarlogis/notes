@@ -9,4 +9,6 @@ Quelques monades classiques:
 [[Monade Either]]
 [[Monade OneOf]]
 
+[[Monades - iMSA]]
+
 #functional
