@@ -59,7 +59,7 @@ Outil simple permettant de benchmarker directement des méthodes/fonctions
 [[Sharplab]] https://sharplab.io/
 Analyse un snippet de code C# et montre le code généré en réponse
 
-[[Specflow]] https://specflow.org/
+[[tools/tools details/Specflow]] https://specflow.org/
 Automatisation test 'BDD'  / validation via du Gherkin.
 --> https://docs.specflow.org/projects/specflow-livingdoc/en/latest/ livingdoc générée pour faciliter partage autour du Gherkin
 

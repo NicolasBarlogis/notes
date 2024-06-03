@@ -1,7 +1,7 @@
 [[Should.js]] https://github.com/shouldjs/should.js
 lib permettant d'exprimer des tests dans un format BDD:  `user.should.have.property('name', 'tj');`
 
-[[Chai.js]] https://www.chaijs.com/
+[[Chai.js 1]] https://www.chaijs.com/
 lib de test, offrant des syntaxes should, expect & assert
 
 [[Supertest]] https://github.com/visionmedia/supertest

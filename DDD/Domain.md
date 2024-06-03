@@ -6,5 +6,5 @@
 ## [[Event]]
 ## [[Service]]
 
-[[Domain Oriented Observability]] 
+[[Domain Oriented Observability 1]] 
 [[Always valid domain model]]

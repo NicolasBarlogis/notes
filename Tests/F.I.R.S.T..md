@@ -4,4 +4,4 @@
 * Self validating: la validation ne demande pas d'analyser des données, le résultat est évident (couleur --> assert)
 * Thorough: Couvre les cas passant et les cassant (cas d'erreur)
 
-Voir le [[Test Desiderata]], plus poussés
+Voir le [[Test Desiderata 1]], plus poussés
